@@ -1,23 +1,26 @@
 import { Component } from './component.js';
+import { HEROES } from './heroes-array.js';
 
-export class Hero extends Component {
+export class Heroes extends Component {
   template;
-  constructor(arrayHeroes) {
+  constructor(
+    title = 'My Heroes',
+    titleLabel = 'Hero name',
+    titleButton = 'Add hero'
+  ) {
     super();
-    this.template = this.createTemplate(arrayHeroes);
-  }
-  createTemplate(arrayHeroes) {
     this.template = `
     <div>
-    <label>'Hero name'</label>
+    <h2>${title}</h2>
+    <label>${titleLabel}</label>
     <input>
-    <button>Add hero</button>
-    `;
-    let template = '<ul>';
-    arrayHeroes.forEach((item) => {
-      template += `<li><a href = ${item.id} ${item.name}</a><button>X</button></li>`;
+    <button>${titleButton}</button>
+    </div>`;
+    this.template = '<ul><li>';
+    HEROES.forEach((item) => {
+      this.template += `<a href ='../pages/details.html' >${item.id}${item.name}</a>`;
     });
-    template += `</ul></nav>`;
-    return template;
+    this.template += `<button>X</button>`;
+    this.template += `</li></ul>`;
   }
 }
