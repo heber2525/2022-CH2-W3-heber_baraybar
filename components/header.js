@@ -11,17 +11,10 @@ export class Header extends Component {
         <nav>
          <a href="#home">Dashboard</a>
           <a href="#heroes.html">Heroes</a>
+          
           </ul>
           </nav>
       </header> 
 `;
   }
 }
-
-document.querySelector;
-document.querySelector;
-document.addEventListener;
-document.innerHTML;
-document.outerHTML;
-document.classList;
-document.value;
